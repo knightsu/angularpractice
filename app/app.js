@@ -5,10 +5,16 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.view1',
   'myApp.view2',
+  'myApp.test',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
   $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+}])
+    .controller('mainctrl', ['$location', function ($location) {
+        var path = $location.path();
+        console.log('sdfa');
+        console.log(path);
+    }]);
