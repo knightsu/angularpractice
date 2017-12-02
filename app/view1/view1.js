@@ -1,4 +1,3 @@
-'use strict';
 
 angular.module('myApp.view1', ['ngRoute'])
 
@@ -9,7 +8,22 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$location', function() {
+.controller('View1Ctrl', ['$location','$scope', function($location, $scope) {
+  $scope.flag = true;
+
+    $scope.signup = function () {
+
+        if($scope.flag)
+            $scope.flag=false;
+
+    };
+
+    $scope.signin = function () {
+        if(!$scope.flag)
+            $scope.flag=true;
+    }
 
 }]);
+
+
 
