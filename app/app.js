@@ -10,11 +10,10 @@ angular.module('myApp', [
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
-
+  //  $locationProvider.html5Mode(true);
   $routeProvider.otherwise({redirectTo: '/view1'});
+    //$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 }])
     .controller('mainctrl', ['$location', function ($location) {
         var path = $location.path();
-        console.log('sdfa');
-        console.log(path);
     }]);
